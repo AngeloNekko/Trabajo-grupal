@@ -1,0 +1,35 @@
+<div>
+    <div class="titulo">
+        Frases de los personajes
+    </div>
+    <div class="">
+            <mat-form-field class="buscador">
+                <input [(ngModel)]="search" name="search" matInput placeholder="Busqueda Frases">
+            </mat-form-field>
+    </div>
+    <div>
+        <div class="titulo">
+            Personajes
+        </div>
+        <mat-grid-list cols="3" rowHeight="4:5" >
+            <mat-grid-tile *ngFor="let item of frases | filtro:search">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <diV class="tituloPersonaje">
+                                {{item.quote}}
+                            </diV>
+                        </mat-card-title>
+                    </mat-card-header>
+                        <img class="ImgPersona" mat-card-image src={{item.image}} alt="">
+                        <mat-card-content>
+                            <diV class="DatosPersonaje">
+                                Por: {{item.by}}
+                            </diV>
+                        </mat-card-content>
+                </mat-card>
+                
+            </mat-grid-tile>
+    </mat-grid-list>
+    </div>
+</div>
